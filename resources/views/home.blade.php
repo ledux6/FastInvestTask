@@ -16,9 +16,9 @@
                     Hello {{ Auth::user()->name}},<br>
                     Your account number is: <br>
                     <h2>{{ $account_number }}</h2>
-                    Balance: <b>€{{ $balance/1000}}</b>
+                    Balance: <b>€{{ $balance/100}}</b>
                     <form method="get" action="/transfer">
-                        <button type="submit">Continue</button>
+                        <button class="btn btn-primary">Make a Transfer</button>
                     </form>
                 </div>
                 
@@ -37,7 +37,7 @@
                         <tr>
                         <td scope="row">{{$in->from}}</td>
                         <td>{{$in->to}}</td>
-                        <td>{{$in->amount/1000}}</td>
+                        <td>{{$in->amount/100}}</td>
                         <td>{{$in->created_at}}</td>
                         </tr>
                     @endforeach
@@ -58,7 +58,7 @@
                         <tr>
                         <td scope="row">{{$out->from}}</td>
                         <td>{{$out->to}}</td>
-                        <td>{{$out->amount/1000}}</td>
+                        <td>{{$out->amount/100}}</td>
                         <td>{{$out->created_at}}</td>
                         </tr>
                     @endforeach
